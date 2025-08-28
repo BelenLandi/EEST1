@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Docente</title>
+</head>
+<body>
+  <h2>Panel Docente</h2>
+  <p>Bienvenido. Aquí podés buscar estudiantes por nombre o DNI.</p>
+
+  <input type="text" id="busqueda" placeholder="Buscar alumno..." onkeyup="filtrar()">
+  <ul id="lista">
+    <li>Lucía Gómez - DNI: 45678123</li>
+    <li>Juan Torres - DNI: 38456789</li>
+    <li>Carla Fernández - DNI: 40123456</li>
+  </ul>
+
+  <script>
+    function filtrar() {
+      const input = document.getElementById("busqueda").value.toLowerCase();
+      const lista = document.getElementById("lista").getElementsByTagName("li");
+
+      for (let i = 0; i < lista.length; i++) {
+        const texto = lista[i].textContent.toLowerCase();
+        lista[i].style.display = texto.includes(input) ? "" : "none";
+      }
+    }
+  </script>
+</body>
+</html>
