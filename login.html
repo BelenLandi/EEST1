@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ingreso Docente</title>
+</head>
+<body>
+  <h2>Portal Docente - Escuela Técnica</h2>
+  <form onsubmit="return validarLogin()">
+    <label for="usuario">Usuario (DNI):</label><br>
+    <input type="text" id="usuario" required><br><br>
+
+    <label for="clave">Contraseña:</label><br>
+    <input type="password" id="clave" required><br><br>
+
+    <button type="submit">Ingresar</button>
+  </form>
+
+  <script>
+    function validarLogin() {
+      const usuario = document.getElementById("usuario").value;
+      const clave = document.getElementById("clave").value;
+
+      // Simulación: solo permite acceso si coincide con estos datos
+      if (usuario === "12345678" && clave === "docente2025") {
+        window.location.href = "panel.html"; // Redirige al panel docente
+        return false;
+      } else {
+        alert("Usuario o contraseña incorrectos");
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
